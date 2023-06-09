@@ -12,6 +12,6 @@ export default qwikify$(
         <button onClick={() => setCount(count + 1)}>+1</button>
       </div>
     );
-  }
-  // { eagerness: "click" }
+  },
+  { eagerness: "hover" }
 );
