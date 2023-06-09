@@ -6,3 +6,4 @@
 - [Counter](/moad/counter/)
 - [Clock](/moad/clock/)
 - [JS Streaming](/moad/js-streaming/)
+- [Architecture](/moad/architecture/)
