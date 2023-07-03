@@ -1,30 +1,17 @@
-import { component$, useSignal, useStore } from "@builder.io/qwik";
+import { component$, useSignal } from "@builder.io/qwik";
 
 export default component$(() => {
-  const loadCmp = useSignal(false);
-  const count = { foo: useStore({ shai: { awesomeness: 123 } }) };
+  console.log("Render");
+  const count = useSignal(123);
+  const show = useSignal(false);
   return (
     <>
-      <button onClick$={() => (loadCmp.value = true)}>load</button>
-      {loadCmp.value && <div>loaded</div>}
-      <button onClick$={() => count.foo.shai.awesomeness++}>+1</button>
-      <WrapDisplay count={count.foo.shai.awesomeness} />
-      <WrapDisplay count={123} />
+      <button onClick$={() => count.value++}>+1</button>
+      <input type="checkbox" onChange$={(e, t) => (show.value = t.checked)} />
+      Counter: {count.value + 1}
+      <hr />
+      {show.value}
+      {show.value && <span>Hello</span>}
     </>
-  );
-});
-
-export const WrapDisplay = component$<{ count: number }>(({ count }) => {
-  return <Display count={count} />;
-});
-
-export const Display = component$<{ count: number }>(({ count }) => {
-  const loadCmp = useSignal(false);
-  return (
-    <div>
-      Count: {count}
-      <button onClick$={() => (loadCmp.value = true)}>load</button>
-      {loadCmp.value && <div>loaded</div>}
-    </div>
   );
 });
