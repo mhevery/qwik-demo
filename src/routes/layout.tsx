@@ -1,5 +1,9 @@
-import { component$, Slot } from '@builder.io/qwik';
+import { component$, Slot } from "@builder.io/qwik";
 
 export default component$(() => {
-  return <Slot />;
+  return (
+    <div>
+      <Slot />
+    </div>
+  );
 });

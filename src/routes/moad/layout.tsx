@@ -15,14 +15,14 @@ export default component$(() => {
               <ul>
                 {item.items?.map((item, id) => (
                   <li key={id}>
-                    <Link
+                    <a
                       href={item.href}
                       class={{
                         "is-active": url.pathname === item.href,
                       }}
                     >
                       {item.text}
-                    </Link>
+                    </a>
                   </li>
                 ))}
               </ul>
