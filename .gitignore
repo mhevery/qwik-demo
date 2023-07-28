@@ -41,3 +41,6 @@ lerna-debug.log*
 
 # Cloudflare
 functions/**/*.js
+
+# Panda CSS
+src/styled-system
