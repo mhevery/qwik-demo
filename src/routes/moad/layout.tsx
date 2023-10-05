@@ -1,37 +1,28 @@
 import { Slot, component$ } from "@builder.io/qwik";
-import { useContent, useLocation } from "@builder.io/qwik-city";
-import { css } from "~/styled-system/css";
+import { useContent } from "@builder.io/qwik-city";
 
 export default component$(() => {
   const { menu } = useContent();
-  const { url } = useLocation();
   return (
-    <div
-      class={css({
-        padding: ".4rem",
-      })}
-    >
+    <div class="m-5">
       <Slot />
-      <hr />
+      <hr class="mt-10 mb-5 " />
       {menu
         ? menu.items?.map((item) => (
             <>
-              <h5>{item.text}</h5>
-              <ul>
+              <h5 class="inline">{item.text}:</h5>
+              {"[ "}
+              <ul class="inline">
                 {item.items?.map((item, id) => (
-                  <li key={id} class={css({ marginLeft: ".5em" })}>
-                    <a
-                      href={item.href}
-                      class={css({
-                        textDecoration: "underline",
-                        color: "blue",
-                      })}
-                    >
+                  <li key={id} class="inline">
+                    {id ? " | " : ""}
+                    <a href={item.href} class="underline text-sky-500">
                       {item.text}
                     </a>
                   </li>
                 ))}
               </ul>
+              {" ]"}
             </>
           ))
         : null}{" "}
