@@ -27,8 +27,10 @@ export default component$(() => {
         <Greet />
         <Counter />
         <Shop cart={cart} />
-        <div style={{ height: "20vh" }} />
-        <Clock />
+        {/* <div style={{ height: "10vh" }} /> */}
+        <div class="py-40">
+          <Clock />
+        </div>
       </main>
       <Footer />
     </div>
