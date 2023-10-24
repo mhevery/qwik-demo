@@ -9,10 +9,10 @@ import { Shop } from "./shop";
 
 export default component$(() => {
   const cart = useStore<CartItem[]>([
-    {
-      name: "Sample Item",
-      qty: 5,
-    },
+    // {
+    //   name: "Sample Item",
+    //   qty: 5,
+    // },
   ]);
 
   return (
