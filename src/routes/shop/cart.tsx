@@ -18,7 +18,7 @@ export const Cart = component$<{ class?: string; cart: CartItem[] }>(
                 <ShoppingCartIcon />
               </label>
             </div>
-            <div class="drawer-side">
+            <div class="drawer-side z-10">
               <label
                 for="my-drawer-4"
                 aria-label="close sidebar"
