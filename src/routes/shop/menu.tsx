@@ -9,6 +9,8 @@ export const Menu = component$<{ class?: string }>(({ class: classNames }) => {
         "menu-horizontal",
         "bg-base-200",
         "rounded-box",
+        "flex",
+        "content-center",
         classNames,
       ]}
     >
