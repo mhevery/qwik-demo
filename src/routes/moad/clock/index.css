@@ -2,13 +2,13 @@
 
 .clock {
   background: #fff;
-  border: 10px solid #7a7a7a;
+  border: var(--border-size) solid #7a7a7a;
   border-radius: 50%;
   box-sizing: border-box;
-  height: 300px;
+  height: var(--size);
   margin: 0 auto;
   position: relative;
-  width: 300px;
+  width: var(--size);
 }
 
 .twelve,
@@ -21,65 +21,65 @@
 
 .twelve,
 .six {
-  height: 10px;
-  width: 4px;
+  height: calc( var(--border-size)  * 1);
+  width: calc( var(--border-size)  * 0.2);
 }
 
 .three,
 .nine {
-  height: 4px;
-  width: 10px;
+  height: calc( var(--border-size)  * .2);
+  width: calc( var(--border-size)  * 1);
 }
 
 .twelve {
-  left: 50%;
-  top: -1px;
+  left: calc(50% - calc( var(--border-size)  * 0.1));
+  top: calc( var(--border-size)  * -0.5);
 }
 
 .three {
-  right: -1px;
-  top: 50%;
+  top: calc(50% - calc( var(--border-size)  * 0.1));
+  right: calc( var(--border-size)  * -0.5);
 }
 
 .six {
-  left: 50%;
-  bottom: -1px;
+  left: calc(50% - calc( var(--border-size)  * 0.1));
+  bottom: calc( var(--border-size)  * -0.5);
 }
 
 .nine {
-  left: -1px;
-  top: 50%;
+  top: calc(50% - calc( var(--border-size)  * 0.1));
+  left: calc( var(--border-size)  * -0.5);
 }
 
 .hour {
-  height: 60px;
-  width: 4px;
-  background: #333;
+  height: calc( var(--size)  * 0.2);
+  width: calc( var(--border-size)  * .3);
+  background:  #333;
   position: absolute;
-  left: 50%;
-  top: 80px;
+  left: calc(50% - calc( var(--border-size)  * 0.15));
+  top: calc(calc( var(--size)  * 0.5) - calc( var(--size)  * 0.2) - var(--border-size));
   animation: tick 43200s infinite linear;
   -webkit-animation: tick 43200s infinite linear;
 }
 
 .minute {
-  height: 100px;
-  width: 4px;
+  height: calc( var(--size)  * 0.3);
+  width: calc( var(--border-size)  * .3);
   background: #777;
   position: absolute;
-  left: 50%;
-  top: 40px;
+  left: calc(50% - calc( var(--border-size)  * 0.15));
+  top: calc(calc( var(--size)  * 0.5) - calc( var(--size)  * 0.3) - var(--border-size));
   animation: tick 3600s infinite linear;
   -webkit-animation: tick 3600s infinite linear;
 }
 
 .second {
-  height: 120px;
-  width: 3px;
+  height: calc( var(--size)  * 0.4);
+  width: calc( var(--border-size)  * .15);
   background: #fc0505;
   position: absolute;
-  left: 50%;
-  top: 20px;
+  left: calc(50% - calc( var(--border-size)  * 0.075));
+  top: calc(calc( var(--size)  * 0.5) - calc( var(--size)  * 0.4) - var(--border-size));
   animation: tick 60s infinite linear;
   -webkit-animation: tick 60s infinite linear;
 }
@@ -87,6 +87,6 @@
 .hour,
 .minute,
 .second {
-  transform-origin: 2px 100%;
-  -webkit-transform-origin: 2px 100%;
+  transform-origin: 50% 100%;
+  -webkit-transform-origin: 50% 100%;
 }

@@ -32,8 +32,8 @@ export const Clock = component$(() => {
 
   const store = useStore({
     hour: 0,
-    minute: 0,
-    second: 0,
+    minute: 30 * (360 / 60),
+    second: 15 * (360 / 60),
   });
 
   useVisibleTask$(() => {
@@ -50,7 +50,7 @@ export const Clock = component$(() => {
 
   console.log("Render Clock");
   return (
-    <div class="clock">
+    <div class="clock" style={{ "--size": "40vh", "--border-size": "2vh" }}>
       <div class="twelve"></div>
       <div class="three"></div>
       <div class="six"></div>
