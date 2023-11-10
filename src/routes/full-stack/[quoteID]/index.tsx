@@ -63,10 +63,10 @@ export default component$(() => {
 });
 
 const MOCK_VALUE = {
-  id: "123",
-  text: "We talk about fullstack developers, but QwikDev takes fullstack to its full definition of the word. Server and client have never been so seamless.",
-  rating: 4,
-  favoriteCount: 231,
+  id: "MOCK_ID",
+  text: "MOCK_DATA",
+  rating: 0,
+  favoriteCount: 0,
   favorited: false,
 };
 const MOCK_ACTION = { isRunning: false };
