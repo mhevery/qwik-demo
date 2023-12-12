@@ -2,18 +2,14 @@ import { component$, useStore, $, useSignal } from "@builder.io/qwik";
 import { server$ } from "@builder.io/qwik-city";
 import { watch } from "fs/promises";
 
-const watchRoutes = server$(() => {
-  return watch("./src/routes", { recursive: true });
-});
-
 export default component$(() => {
   const files = useStore<string[]>([]);
   const watching = useSignal(false);
   const onClick = $(async () => {
     watching.value = true;
-    const watchFiles = await watchRoutes();
+    const watchFiles = await server$(watch)(".", { recursive: true });
     for await (const file of watchFiles) {
-      files.push(file.filename || "");
+      files.push(String(file.filename));
     }
   });
   return (
