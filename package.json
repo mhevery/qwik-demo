@@ -61,6 +61,7 @@
     "gsap": "^3.12.1",
     "simplex-noise": "^4.0.1",
     "three": "^0.153.0",
-    "vite-plugin-inspect": "^0.7.28"
+    "vite-plugin-inspect": "^0.7.28",
+    "vitest": "^1.6.0"
   }
 }
